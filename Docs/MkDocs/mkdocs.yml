@@ -1,0 +1,19 @@
+site_name: Gentoo on the Raspberry Pi
+pages:
+- Home: index.md
+
+#- Libraries:
+#    - Appst.Reactive: Appst.Reactive\Overview.md
+#    - Appst.SubProcess.Reactive: Appst.SubProcess.Reactive\Overview.md
+#    - Appst.IO.Serial: Appst.IO.Serial\Overview.md
+#    - Appst.IO.Serial.Reactive: Appst.IO.Serial.Reactive\Overview.md
+# - Doxygen: doxygen\index.html
+
+theme: slate
+
+markdown_extensions:
+    - smarty
+
+extra_css:
+    - css/highlight-fix.css
+    - css/highlight-custom.css
