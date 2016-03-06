@@ -29,3 +29,11 @@ src_unpack() {
 	git-2_src_unpack
 	unpack_set_extraversion
 }
+
+src_install() {
+   kernel-2_src_install
+   SRCCONFIG="${FILESDIR}"/bcm2709_grbdconfig.1-"${PV}"
+   DESTDIR="${D}usr/src/linux-4.5-rc6-grbd/arch/arm/configs"
+   cp ${SRCCONFIG} ${DESTDIR}/bcm2709_grbdconfig   
+}
+
