@@ -18,7 +18,7 @@ inherit git-2 versionator
 EGIT_REPO_URI=https://github.com/raspberrypi/linux.git
 EGIT_PROJECT="raspberrypi-linux.git"
 EGIT_BRANCH="rpi-$(get_version_component_range 1-2).y"
-EGIT_COMMIT="a3f8393e15dd31b00afffec96e678e54eecd589e"
+EGIT_COMMIT="e481b5ceae6c94c7e60f8bb8591cbb362806246e"
 
 DESCRIPTION="Raspberry PI kernel sources"
 HOMEPAGE="https://github.com/raspberrypi/linux"
@@ -29,3 +29,11 @@ src_unpack() {
 	git-2_src_unpack
 	unpack_set_extraversion
 }
+
+src_install() {
+   kernel-2_src_install
+   SRCCONFIG="${FILESDIR}"/bcm2709_grbdconfig.1-"${PV}"
+   DESTDIR="${D}usr/src/linux-4.5-rc6-grbd/arch/arm/configs"
+   cp ${SRCCONFIG} ${DESTDIR}/bcm2709_grbdconfig   
+}
+
