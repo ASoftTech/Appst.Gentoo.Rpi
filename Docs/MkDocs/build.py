@@ -1,7 +1,7 @@
 #! python3
 import os, sys, subprocess, shutil
 
-# Full url of site is http://asofttech.github.io/Appst.IO/
+# Full url of site is http://asofttech.github.io/Appst.Gentoo.Rpi/
 
 # MkDocs Build Script
 class MkDocsBuild(object):
@@ -10,7 +10,6 @@ class MkDocsBuild(object):
     def __init__(self):
         self.SRCDIR = "docs"
         self.BUILDDIR = "site"
-        self.DOXYBUILDDIR = "../Doxygen/html"
         self.MKDOCSDIR = "./"
 
     # Run a command
@@ -43,10 +42,7 @@ class MkDocsBuild(object):
 
     # Do the main build of doxygen html
     def build(self):
-        self.clean()
-        print("Copying Doxygen files")
-        dest = os.path.join(self.SRCDIR, "doxygen")
-        shutil.copytree(self.DOXYBUILDDIR, dest)
+        self.clean()        
         print("Building MkDocs Files")
         cmdopts = ["mkdocs", "build", "--clean"]
         self.run_cmd(cmdopts, self.MKDOCSDIR)
@@ -67,9 +63,6 @@ class MkDocsBuild(object):
 
     # Clean the Build directory
     def clean(self):
-        self.emptydir("docs/doxygen")
-        if os.path.exists(os.path.abspath("docs/doxygen")):
-            os.rmdir(os.path.abspath("docs/doxygen"))
         self.emptydir("site")
         print ("Clean finished")
 

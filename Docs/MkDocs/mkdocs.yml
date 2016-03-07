@@ -1,15 +1,14 @@
 site_name: Gentoo on the Raspberry Pi
 pages:
 - Home: index.md
-
-#- Libraries:
-#    - Appst.Reactive: Appst.Reactive\Overview.md
-#    - Appst.SubProcess.Reactive: Appst.SubProcess.Reactive\Overview.md
-#    - Appst.IO.Serial: Appst.IO.Serial\Overview.md
-#    - Appst.IO.Serial.Reactive: Appst.IO.Serial.Reactive\Overview.md
-# - Doxygen: doxygen\index.html
+- Kernel:
+    - Kernel Building: Kernel\2.5 Custom Kernel.md
+    - 64Bit Kernel: Kernel\64bit Kernel.md
 
 theme: slate
+#theme: alabaster
+#theme: readthedocs
+#theme: mkdocs
 
 markdown_extensions:
     - smarty
