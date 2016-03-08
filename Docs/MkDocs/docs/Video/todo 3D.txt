@@ -1,0 +1,59 @@
+## TODO
+
+### Symlinks
+
+The vc4 driver appears to be /usr/lib/mesa/vc4_dri.so
+with symlinks across to /usr/lib/dri/
+
+for video cards in make.conf I have the following setup
+VIDEO_CARDS="fbdev fbturbo vc4 modesetting"
+
+
+With eselect mesa we have the following
+
+```
+# show current setting
+eselect mesa show
+# List available settings
+eselect mesa list
+# Select the software renderer via the new gallium api
+eselect mesa set sw gallium
+# Select the software renderer using the older classic api
+eselect mesa set sw classic
+```
+
+So far this symlinks
+source: /usr/lib/mesa/swrast_dri.so (classic)
+source: /usr/lib/mesa/swrastg_dri.so (gallium)
+destination: /usr/lib/dri/swrast_dri.so
+
+do we need to symlink the source
+/usr/lib/mesa/vc4_dri.so
+to the destination
+/usr/lib/dri/swrast_dri.so ?
+
+
+### eselect mesa
+
+The files for eselect mesa:
+
+  * app-eselect/eselect-mesa
+  * /usr/share/eselect/modules/mesa.eselect
+  * /usr/share/mesa/eselect-mesa.conf
+
+### Xorg ebuilds
+
+x11-base/xorg-drivers is a meta ebuild that pulls in other ebuilds for video drivers such as
+(video_cards_fbdev ? x11-drivers/xf86-video-fbdev)
+
+xorg-drivers-9999.ebuild
+video_cards_vc4
+
+### TODO
+
+try changing the xorg driver from fbturbo to modesetting
+add modesetting to list of video drivers
+emerge x11-drivers/xf86-video-modesetting
+
+find symlinks with
+find -L /dir/to/start -samefile /tmp/orig.file
