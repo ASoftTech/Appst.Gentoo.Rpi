@@ -3,10 +3,11 @@
 ## Overview
 
 The latest Rpi3 has a BCM2710 / BCM2837 Arm CPU.
-This happens to be a 64bit Armv8 cpu. At the moment all Rpi distro's are based on 32bit.
-In theory if the kernel has support for it we may be able to get 64bit working on the Rpi 3.
+This happens to be a 64bit Armv8. At the moment all Rpi distro's are based on 32bit.
+In theory if the kernel has driver support for it we may be able to get 64bit working on the Rpi 3.
 
-So far I've not managed to get a 64bit kernel working / building but I've included what steps I've included so far for anyone else who'd like to try this.
+Note the below does NOT currently work, I've just included this for future reference
+for anyone else that would like to try this.
 
   * <https://archives.gentoo.org/gentoo-embedded/message/9b96f5fd00a9c5e65e062f3d6e99fc50>
   * <http://gentoo.osuosl.org/experimental/arm64/>
@@ -99,6 +100,19 @@ For a break down of the different options:
   * modules - compile needed kernel modules
   * dtbs - compile the device tree's 
 
+TODO so far it seems to drop out when compiling the drivers for image
+```
+scripts/Makefile.build:407: recipe for target 'drivers/usb/host/dwc_otg' failed
+make[3]: *** [drivers/usb/host/dwc_otg] Error 2
+scripts/Makefile.build:407: recipe for target 'drivers/usb/host' failed
+make[2]: *** [drivers/usb/host] Error 2
+scripts/Makefile.build:407: recipe for target 'drivers/usb' failed
+make[1]: *** [drivers/usb] Error 2
+Makefile:950: recipe for target 'drivers' failed
+make: *** [drivers] Error 2
+```
+
+
 ## Install the Sources
 
 Finally we need to install the kernel sources into boot
@@ -112,9 +126,6 @@ Next we copy the kernel across to boot, the kernel needs to be parsed via mkknli
 ```Bash
 scripts/mkknlimg arch/arm/boot/zImage /root/arm64kern/boot/kernel-arm64-gentoo1.img
 ```
-
-
-
 
 ## TODO
 

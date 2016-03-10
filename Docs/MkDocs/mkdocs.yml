@@ -1,9 +1,16 @@
 site_name: Gentoo on the Raspberry Pi
 pages:
 - Home: index.md
-- Kernel:
-    - Kernel Building: Kernel\2.5 Custom Kernel.md
-    - 64Bit Kernel: Kernel\64bit Kernel.md
+- Boot:
+    - Kernel Building: Boot\Kernel Building.md
+    - Rpi3 Wifi: Boot\Rpi3 Wifi.md
+    - 64Bit Kernel: Boot\64bit Kernel.md
+- Application:
+    - Appst.Gentoo.Rpi Overlay: Application\Appst.Gentoo.Rpi Overlay.md
+    - Gentoo Arm Overlay: Application\Gentoo Arm Overlay.md
+    - 2D FB Turbo Driver: Application\2D FB Turbo Driver.md
+    - 3D VC4: Application\3D VC4.md
+    - Docker: Application\Docker.md
 
 theme: slate
 #theme: alabaster
