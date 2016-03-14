@@ -3,19 +3,19 @@
 # Some settings may impact device functionality. See link above for details
 
 #kernel=kernel7.img
-kernel=kernel7-gentoo6.img
+#kernel=kernel7-gentoo6.img
 
 #kernel=kernel7-gentoo8-vc4.img
 #kernel=kernel7-gentoo9-vc4.img
 
-#kernel=kernel7-gentoo10-vc4.img
+kernel=kernel7-gentoo10-vc4.img
 
 # VPU shouldn't handle V3D interrupts
 #mask_gpu_interrupt0=0x400
 # VPU shouldn't smash our display setup.
 avoid_warnings=2
 
-#dtoverlay=vc4-kms-v3d
+dtoverlay=vc4-kms-v3d
 #cma_offline_start=16
 
 
