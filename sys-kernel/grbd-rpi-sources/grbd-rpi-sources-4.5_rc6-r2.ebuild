@@ -18,7 +18,7 @@ inherit git-2 versionator
 EGIT_REPO_URI=https://github.com/raspberrypi/linux.git
 EGIT_PROJECT="raspberrypi-linux.git"
 EGIT_BRANCH="rpi-$(get_version_component_range 1-2).y"
-EGIT_COMMIT="19df24f3dacd45460bc57af0c955aa0457807111"
+EGIT_COMMIT="e481b5ceae6c94c7e60f8bb8591cbb362806246e"
 
 DESCRIPTION="Raspberry PI kernel sources"
 HOMEPAGE="https://github.com/raspberrypi/linux"
@@ -26,6 +26,8 @@ HOMEPAGE="https://github.com/raspberrypi/linux"
 KEYWORDS="~* arm"
 
 src_unpack() {
+    echo "${EGIT_BRANCH}"
+
 	git-2_src_unpack
 	unpack_set_extraversion
 }
