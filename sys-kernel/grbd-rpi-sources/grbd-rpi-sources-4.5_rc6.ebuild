@@ -32,8 +32,10 @@ src_unpack() {
 
 src_install() {
    kernel-2_src_install
-   SRCCONFIG="${FILESDIR}"/bcm2709_grbdconfig.1-"${PV}"
-   DESTDIR="${D}usr/src/linux-4.5-rc6-grbd/arch/arm/configs"
-   cp ${SRCCONFIG} ${DESTDIR}/bcm2709_grbdconfig   
+   LINVER="${PV}-grbd-${PR}"
+   LINVER=${LINVER//_/-}
+   DESTDIR="${D}usr/src/linux-${LINVER}/arch/arm/configs"
+   cp "${FILESDIR}/docker_bcm2709_cfg.${PV}.diff" "${DESTDIR}/docker_bcm2709_cfg.diff"
+   cp "${FILESDIR}/vc4_bcm2709_cfg.${PV}.diff" "${DESTDIR}/vc4_bcm2709_cfg.diff"
 }
 

@@ -1,0 +1,14 @@
+# ChangeLog for sys-kernel/grbd-rpi-sources 
+
+* grbd-rpi-sources-4.5_rc5
+
+Initial version based of of Rpi Linux Sources for 4.5_rc5
+
+* grbd-rpi-sources-4.5_rc6
+
+Next version up for 4.5_rc6
+
+* grbd-rpi-sources-4.5_rc6-r1
+
+THis version should now have the needed vc4 dtb patches for the device tree
+for 3D
