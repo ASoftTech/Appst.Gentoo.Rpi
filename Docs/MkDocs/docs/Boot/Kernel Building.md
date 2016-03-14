@@ -36,9 +36,9 @@ and there seems to be a lot of updates and changes in relation to Arm. To use gr
 TODO add overlay link
 
 ```Bash
-emerge --autounmask-write =sys-kernel/grbd-rpi-sources-4.5_rc6
+emerge --autounmask-write =sys-kernel/grbd-rpi-sources-4.5_rc6-r1
 etc-update
-emerge =sys-kernel/grbd-rpi-sources-4.5_rc6
+emerge =sys-kernel/grbd-rpi-sources-4.5_rc6-r1
 ```
 
 Note typically any version numbers ending in 9999 will get the latest version from github
@@ -47,7 +47,7 @@ Next we need to select which kernel source to use
 ```
 cd /usr/src
 rm linux
-ln -s linux-4.5-rc6-grbd linux
+ln -s linux-4.5-rc6-grbd-r1 linux
 cd linux
 ```
 
@@ -61,7 +61,8 @@ There's a number of different configuration files available under **arch/arm/con
 
   * **bcmrpi_defconfig** - Default Configuration for the Rpi1 / Zero
   * **bcm2709_defconfig** - Default Configuration for the Rpi2 / Rpi3
-  * **bcm2709_grbdconfig** - Custom Configuration file based ont the default, plus settings for docker
+  * **docker_bcm2709_cfg.diff** - Patch config settings for Docker
+  * **vc4_bcm2709_cfg.diff** - Patch config settings for VC4
 
 If your using grbd-rpi-sources then I've included a file called bcm2709_grbdconfig for enabling Docker.
 
@@ -74,30 +75,33 @@ Note this will erase the .config configuration file so make sure to back it up b
 make distclean
 ```
 
-### Using the Default Config
+### Rpi1  / Rpi Zero Config
 
-I've found that running make oldconfig will filter / clean up the settings for where a older configuration file is used on a newer kernel
+I've found that running make oldconfig will filter / clean up the settings for where a older configuration file is used
 
-For the Rpi 1 / Zero
 ```
 make bcmrpi_defconfig
 make oldconfig
 ```
 
-For the Rpi 2 / 3
+### Rpi2 / Rpi3 Config
+
 ```
+# Default Config for Rpi2
 make bcm2709_defconfig
-make oldconfig
+
+# If your using the grbd sources, then there's a patch to the config to enable docker on the Rpi2
+patch -p1 .config arch/arm/configs/docker_bcm2709_cfg.diff
 ```
 
-### Using settings from grbd sources
-
-TODO add custom settings for the zero / 1
-
-For the Rpi2 / Rpi3
+At the time of writing I'm still struggling to get vc4 to work (black screen)
+but I believe this should apply some of the settings needed for those that want to experiment.
+Note this disables the default framebuffer driver so that vc4 can take over instead, but so far I've not managed
+to get this to work yet.
 ```
-cp arch/arm/configs/bcm2709_grbdconfig .config
+patch -p1 .config arch/arm/configs/vc4_bcm2709_cfg.diff
 ```
+
 
 ### Additional Settings
 
@@ -106,8 +110,6 @@ If you want to customise the config further just use
 make menuconfig
 ```
 You can also use the / key to search for a given option within the menu
-
-
 
 ## Building the Kernel Sources
 
@@ -161,6 +163,9 @@ emerge --ask @module-rebuild
 
 Finally we want to switch config.txt across to using the kernel to test it out.
 If for any reason something goes wrong we can hold down **shift** at bootup, click e to edit the config.txt file within Noobs, to get back to a bootable kernel
+
+Sometimes there won't be a entry for the old kernel, in which case just add this as a new line
+to the config.txt
 
 ```Bash
 nano -w /boot/config.txt

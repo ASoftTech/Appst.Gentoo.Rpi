@@ -1,0 +1,210 @@
+Uncompressing Linux... done, booting the kernel.
+
+Welcome to the rescue system
+recovery login: Uncompressing Linux... done, booting the kernel.
+[    0.000000] Booting Linux on physical CPU 0xf00
+[    0.000000] Linux version 4.5.0rpi-sources-v7+ (root@Gunter1) (gcc version 4.8.5 (Gentoo 4.8.5 p1.3, pie-0.6.2) ) #1 SMP Mon Mar 14 12:02:38 GMT 2016
+[    0.000000] CPU: ARMv7 Processor [410fc075] revision 5 (ARMv7), cr=10c5387d
+[    0.000000] CPU: div instructions available: patching division code
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+[    0.000000] Machine model: Raspberry Pi 2 Model B Rev 1.1
+[    0.000000] cma: Reserved 256 MiB at 0x20000000
+[    0.000000] Memory policy: Data cache writealloc
+[    0.000000] [bcm2709_smp_init_cpus] enter (9520->f3003010)
+[    0.000000] [bcm2709_smp_init_cpus] ncores=4
+[    0.000000] PERCPU: Embedded 13 pages/cpu @ba6e3000 s22528 r8192 d22528 u53248
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 239540
+[    0.000000] Kernel command line: cma=256M@512M dma.dmachans=0x7f35 bcm2708_fb.fbwidth=1824 bcm2708_fb.fbheight=984 bcm2709.boardrev=0xa01041 bcm2709.serial=0x90f55b smsc95xx.macaddr=B8:27:EB:90:F5:5B bcm2708_fb.fbswap=1 bcm2709.uart_clock=3000000 bcm2709.disk_led_gpio=47 bcm2709.disk_led_active_low=0 vc_mem.mem_base=0x3dc00000 vc_mem.mem_size=0x3f000000  dwc_otg.lpm_enable=0 console=ttyAMA0,115200 console=tty1 root=/dev/sda3 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait cma=256M@512M
+[    0.000000] PID hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.000000] Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+[    0.000000] Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+[    0.000000] Memory: 683848K/966656K available (6893K kernel code, 463K rwdata, 1892K rodata, 500K init, 778K bss, 20664K reserved, 262144K cma-reserved)
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[    0.000000]     fixmap  : 0xffc00000 - 0xfff00000   (3072 kB)
+[    0.000000]     vmalloc : 0xbb800000 - 0xff800000   (1088 MB)
+[    0.000000]     lowmem  : 0x80000000 - 0xbb000000   ( 944 MB)
+[    0.000000]     modules : 0x7f000000 - 0x80000000   (  16 MB)
+[    0.000000]       .text : 0x80008000 - 0x8089c748   (8786 kB)
+[    0.000000]       .init : 0x8089d000 - 0x8091a000   ( 500 kB)
+[    0.000000]       .data : 0x8091a000 - 0x8098dc6c   ( 464 kB)
+[    0.000000]        .bss : 0x80990000 - 0x80a52a1c   ( 779 kB)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+[    0.000000] Hierarchical RCU implementation.
+[    0.000000]  Build-time adjustment of leaf fanout to 32.
+[    0.000000] NR_IRQS:16 nr_irqs:16 16
+[    0.000000] Architected cp15 timer(s) running at 19.20MHz (phys).
+[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x46d987e47, max_idle_ns: 440795202767 ns
+[    0.000011] sched_clock: 56 bits at 19MHz, resolution 52ns, wraps every 4398046511078ns
+[    0.000032] Switching to timer-based delay loop, resolution 52ns
+[    0.000349] Console: colour dummy device 80x30
+[    0.001608] console [tty1] enabled
+[    0.001666] Calibrating delay loop (skipped), value calculated using timer frequency.. 38.40 BogoMIPS (lpj=192000)
+[    0.001758] pid_max: default: 32768 minimum: 301
+[    0.002210] Mount-cache hash table entries: 2048 (order: 1, 8192 bytes[    0.635723] bcm2835-dma 3f007000.dma: DMA legacy API manager at f3007000, dmachans=0x1
+[    0.645474] SCSI subsystem initialized
+[    0.649477] usbcore: registered new interface driver usbfs
+[    0.655123] usbcore: registered new interface driver hub
+[    0.660617] usbcore: registered new device driver usb
+[    0.675788] raspberrypi-firmware soc:firmware: Attached to firmware from 2016-03-09 18:11
+[    0.711968] clocksource: Switched to clocksource arch_sys_counter
+[    0.768531] VFS: Disk quotas dquot_6.6.0
+[    0.772655] VFS: Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+[    0.780113] FS-Cache: Loaded
+[    0.783382] CacheFiles: Loaded
+[    0.799104] NET: Registered protocol family 2[    0.904105] FS-Cache: Netfs 'nfs' registered for caching
+[    0.910758] NFS: Registering the id_resolver key type
+[    0.915957] Key type id_resolver registered
+[    0.920167] Key type id_legacy registered
+[    0.927616] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
+[    0.935294] io scheduler noop registered
+[    0.939258] io scheduler deadline registered (default)
+[    0.944562] io scheduler cfq registered
+[    1.945722] bcm2835-rng 3f104000.rng: hwrng registered
+[    1.951019] vc-cma: Videocore CMA driver
+[    1.955015] vc-cma: vc_cma_base      = 0x00000000
+[    1.959742] vc-cma: vc_cma_size      = 0x00000000 (0 MiB)
+[    1.965179] vc-cma: vc_cma_initial   = 0x00000000 (0 MiB)
+[    1.970833] vc-mem: phys_addr:0x00000000 mem_base=0x3dc00000 mem_size:0x3f000000(1008 MiB)
+[    1.979703] [drm] Initialized drm 1.1.0 20060810
+[    1.985932] [drm:vc4_hdmi_bind] *ERROR* Failed to get pixel clock
+[    1.992132] vc4-drm soc:gpu@7e4c0000: failed to bind 3f902000.hdmi (ops vc4_hdmi_ops): -517
+[    2.000627] vc4-drm soc:gpu@7e4c0000: master bind failed: -517
+[    2.025250] brd: module loaded
+[    2.038725] loop: module loaded
+[    2.044066] vchiq: vchiq_init_state: slot_zero = 0xa0400000, is_master = 0
+[    2.052711] Loading iSCSI transport class v2.0-870.
+[    2.058535] usbcore: registered new interface driver smsc95xx
+[    2.064434] dwc_otg: version 3.00a 10-AUG-2012 (platform bus)
+[    2.270669] Core Release: 2.80a
+[    2.273913] Setting default values for core params
+[    2.278766] Finished setting default values for core params
+[    2.484834] Using Buffer DMA mode
+[    2.488175] Periodic Transfer Interrupt Enhancement - disabled
+[    2.494050] Multiprocessor Interrupt Enhancement - disabled
+[    2.499644] OTG VER PARAM: 0, OTG VER FLAG: 0
+[    2.504047] Dedicated Tx FIFOs mode
+[    2.507966] WARN::dwc_otg_hcd_init:1047: FIQ DMA bounce buffers: virt = 0xa0448000 dma = 0xe0448000 len=9024
+[    2.517901] FIQ FSM acceleration enabled for :
+[    2.517901] Non-periodic Split Transactions
+[    2.517901] Periodic Split Transactions
+[    2.517901] High-Speed Isochronous Endpoints
+[    2.534791] WARN::hcd_init_fiq:413: FIQ on core 1 at 0x80486544
+[    2.540741] WARN::hcd_init_fiq:414: FIQ ASM at 0x804868a4 length 36
+[    2.547035] WARN::hcd_init_fiq:439: MPHI regs_base at 0xbb8a2000
+[    2.553135] dwc_otg 3f980000.usb: DWC OTG Controller
+[    2.558165] dwc_otg 3f980000.usb: new USB bus registered, assigned bus number 1
+[    2.565580] dwc_otg 3f980000.usb: irq 62, io mem 0x00000000
+[    2.571219] Init: Port Power? op_state=1
+[    2.575186] Init: Power Port (0)
+[    2.578726] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+[    2.585573] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.592864] usb usb1: Product: DWC OTG Controller
+[    2.597593] usb usb1: Manufacturer: Linux 4.5.0rpi-sources-v7+ dwc_otg_hcd
+[    2.604513] usb usb1: SerialNumber: 3f980000.usb
+[    2.610104] hub 1-0:1.0: USB hub found
+[    2.613999] hub 1-0:1.0: 1 port detected
+[    2.618995] usbcore: registered new interface driver usb-storage
+[    2.625441] mousedev: PS/2 mouse device common for all mice
+[    2.632223] bcm2835-cpufreq: min=600000 max=900000
+[    2.637400] sdhci: Secure Digital Host Controller Interface driver
+[    2.643642] sdhci: Copyright(c) Pierre Ossman
+[    2.648446] sdhost: log_buf @ a0446000 (e0446000)
+[    2.732002] mmc0: sdhost-bcm2835 loaded - DMA enabled (>1)
+[    2.757985] sdhci-pltfm: SDHCI platform and OF driver helper
+[    2.764329] ledtrig-cpu: registered to indicate activity on CPUs
+[    2.770538] hidraw: raw HID events driver (C) Jiri Kosina
+[    2.776387] usbcore: registered new interface driver usbhid
+[    2.782019] usbhid: USB HID core driver
+[    2.790909] Initializing XFRM netlink socket
+[    2.803573] NET: Registered protocol family 10
+[    2.809831] sit: IPv6 over IPv4 tunneling driver
+[    2.812125] Indeed it is in host mode hprt0 = 00021501
+[    2.820756] NET: Registered protocol family 17
+[    2.825516] Key type dns_resolver registered
+[    2.830808] Registering SWP/SWPB emulation handler
+[    2.832868] mmc0: host does not support reading read-only switch, assuming write-enable
+[    2.834914] mmc0: new high speed SDHC card at address 59b4
+[    2.835712] mmcblk0: mmc0:59b4 USD   7.51 GiB
+[    2.854686] registered taskstats version 1
+[    2.859087] vc-sm: Videocore shared memory driver
+[    2.863867] [vc_sm_connected_init]: start
+[    2.868600] [vc_sm_connected_init]: end - returning 0
+[    2.873856]  mmcblk0: p1 p2 < p5 p6 p7 >
+[    2.878915] vc4-drm soc:gpu@7e4c0000: failed to bind 3f902000.hdmi (ops vc4_hdmi_ops): -517
+[    2.887471] vc4-drm soc:gpu@7e4c0000: master bind failed: -517
+[    2.894179] vc4-drm soc:gpu@7e4c0000: failed to bind 3f902000.hdmi (ops vc4_hdmi_ops): -517
+[    2.902673] vc4-drm soc:gpu@7e4c0000: master bind failed: -517
+[    2.911808] Waiting for root device /dev/sda3...
+[    2.992028] usb 1-1: new high-speed USB device number 2 using dwc_otg
+[    2.998672] Indeed it is in host mode hprt0 = 00001101
+[    3.202313] usb 1-1: New USB device found, idVendor=0424, idProduct=9514
+[    3.209060] usb 1-1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+[    3.217205] hub 1-1:1.0: USB hub found
+[    3.221116] hub 1-1:1.0: 5 ports detected
+[    3.227074] vc4-drm soc:gpu@7e4c0000: failed to bind 3f902000.hdmi (ops vc4_hdmi_ops): -517
+[    3.235673] vc4-drm soc:gpu@7e4c0000: master bind failed: -517
+[    3.502000] usb 1-1.1: new high-speed USB device number 3 using dwc_otg
+[    3.622312] usb 1-1.1: New USB device found, idVendor=0424, idProduct=ec00
+[    3.629218] usb 1-1.1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+[    3.639446] smsc95xx v1.0.4
+[    3.706126] smsc95xx 1-1.1:1.0 eth0: register 'smsc95xx' at usb-3f980000.usb-1.1, smsc95xx USB 2.0 Ethernet, b8:27:eb:90:f5:5b
+[    3.718525] vc4-drm soc:gpu@7e4c0000: failed to bind 3f902000.hdmi (ops vc4_hdmi_ops): -517
+[    3.727080] vc4-drm soc:gpu@7e4c0000: master bind failed: -517
+[    3.812012] usb 1-1.2: new high-speed USB device number 4 using dwc_otg
+[    3.949530] usb 1-1.2: New USB device found, idVendor=148f, idProduct=5370
+[    3.956473] usb 1-1.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[    3.963849] usb 1-1.2: Product: 802.11 n WLAN
+[    3.968231] usb 1-1.2: Manufacturer: Ralink
+[    3.972460] usb 1-1.2: SerialNumber: 1.0
+[    3.979965] vc4-drm soc:gpu@7e4c0000: failed to bind 3f902000.hdmi (ops vc4_hdmi_ops): -517
+[    3.988504] vc4-drm soc:gpu@7e4c0000: master bind failed: -517
+[    4.072009] usb 1-1.4: new high-speed USB device number 5 using dwc_otg
+[    4.192515] usb 1-1.4: New USB device found, idVendor=1a40, idProduct=0101
+[    4.199422] usb 1-1.4: New USB device strings: Mfr=0, Product=1, SerialNumber=0
+[    4.206809] usb 1-1.4: Product: USB 2.0 Hub
+[    4.211839] hub 1-1.4:1.0: USB hub found
+[    4.215945] hub 1-1.4:1.0: 4 ports detected
+[    4.221623] vc4-drm soc:gpu@7e4c0000: failed to bind 3f902000.hdmi (ops vc4_hdmi_ops): -517
+[    4.230201] vc4-drm soc:gpu@7e4c0000: master bind failed: -517
+[    4.236894] vc4-drm soc:gpu@7e4c0000: failed to bind 3f902000.hdmi (ops vc4_hdmi_ops): -517
+[    4.245381] vc4-drm soc:gpu@7e4c0000: master bind failed: -517
+[    4.492009] usb 1-1.4.2: new high-speed USB device number 6 using dwc_otg
+[    4.633801] usb 1-1.4.2: New USB device found, idVendor=0bc2, idProduct=ab24
+[    4.640880] usb 1-1.4.2: New USB device strings: Mfr=2, Product=3, SerialNumber=1
+[    4.648437] usb 1-1.4.2: Product: BUP Slim BL
+[    4.652841] usb 1-1.4.2: Manufacturer: Seagate
+[    4.657309] usb 1-1.4.2: SerialNumber: NA7N0NPM
+[    4.662803] usb-storage 1-1.4.2:1.0: USB Mass Storage device detected
+[    4.669843] scsi host0: usb-storage 1-1.4.2:1.0
+[    4.675620] vc4-drm soc:gpu@7e4c0000: failed to bind 3f902000.hdmi (ops vc4_hdmi_ops): -517
+[    4.684152] vc4-drm soc:gpu@7e4c0000: master bind failed: -517
+[    4.690779] vc4-drm soc:gpu@7e4c0000: failed to bind 3f902000.hdmi (ops vc4_hdmi_ops): -517
+[    4.699292] vc4-drm soc:gpu@7e4c0000: master bind failed: -517
+[    4.772004] usb 1-1.4.4: new low-speed USB device number 7 using dwc_otg
+[    4.905939] usb 1-1.4.4: New USB device found, idVendor=062a, idProduct=0201
+[    4.913054] usb 1-1.4.4: New USB device strings: Mfr=0, Product=1, SerialNumber=0
+[    4.920581] usb 1-1.4.4: Product: USB-compliant keyboard
+[    4.939245] input: USB-compliant keyboard as /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.4/1-1.4.4/1-1.4.4:1.0/0003:062A:0201.0001/input/input0
+[    5.012669] hid-generic 0003:062A:0201.0001: input,hidraw0: USB HID v1.10 Keyboard [USB-compliant keyboard] on usb-3f980000.usb-1.4.4/input0
+[    5.026301] vc4-drm soc:gpu@7e4c0000: failed to bind 3f902000.hdmi (ops vc4_hdmi_ops): -517
+[    5.034850] vc4-drm soc:gpu@7e4c0000: master bind failed: -517
+[    5.041864] input: USB-compliant keyboard as /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.4/1-1.4.4/1-1.4.4:1.1/0003:062A:0201.0002/input/input1
+[    5.112783] hid-generic 0003:062A:0201.0002: input,hiddev0,hidraw1: USB HID v1.10 Mouse [USB-compliant keyboard] on usb-3f980000.usb-1.4.4/input1
+[    5.126796] vc4-drm soc:gpu@7e4c0000: failed to bind 3f902000.hdmi (ops vc4_hdmi_ops): -517
+[    5.135326] vc4-drm soc:gpu@7e4c0000: master bind failed: -517
+[    5.142002] vc4-drm soc:gpu@7e4c0000: failed to bind 3f902000.hdmi (ops vc4_hdmi_ops): -517
+[    5.150468] vc4-drm soc:gpu@7e4c0000: master bind failed: -517
+[    5.673261] scsi 0:0:0:0: Direct-Access     Seagate  BUP Slim BL      0302 PQ: 0 ANSI: 6
+[    5.682839] sd 0:0:0:0: [sda] 1953525167 512-byte logical blocks: (1.00 TB/932 GiB)
+[    5.683406] vc4-drm soc:gpu@7e4c0000: failed to bind 3f902000.hdmi (ops vc4_hdmi_ops): -517
+[    5.683506] vc4-drm soc:gpu@7e4c0000: master bind failed: -517
+[    8.295922] sd 0:0:0:0: [sda] Write Protect is off
+[    8.301323] sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[    8.319498]  sda: sda1 sda2 sda3
+[    8.326053] sd 0:0:0:0: [sda] Attached SCSI disk
+[    8.810259] EXT4-fs (sda3): mounted filesystem with ordered data mode. Opts: (null)
+[    8.818113] VFS: Mounted root (ext4 filesystem) readonly on device 8:3.
+[    8.867412] devtmpfs: mounted
+[    8.871234] Freeing unused kernel memory: 500K (8089d000 - 8091a000)
+[    9.229160] random: nonblocking pool is initialized

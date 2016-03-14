@@ -20,7 +20,7 @@ brcmfmac_sdio mmc1:0001:1: Direct firmware load for brcm/brcmfmac43430-sdio.bin 
 There's now an ebuild to add in the needed firmware files, to use this you'll need to make sure the overlay for the Rpi is added in via layman first
 
 ```
-emerge sys-kernel/rpi3-firmware
+emerge sys-kernel/rpi3-wifi-firmware
 ```
 
 To test the driver
@@ -65,10 +65,12 @@ iw dev wlan0 get power_save
 iw dev wlan0 set power_save off
 ```
 
-To make this run on bootup, create a new file called */etc/local.d/20_wifi.start* <br>
-With the following content
+To make this run on bootup, edit the file */etc/conf.d/net* and add the following section
 
 ```
-#!/bin/bash
-iw dev wlan0 set power_save off
+postup() {
+   iw wlan0 set power_save off
+}
 ```
+
+This will cause power management on the network card to be disabled after it's brought up

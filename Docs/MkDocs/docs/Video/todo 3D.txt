@@ -57,3 +57,99 @@ emerge x11-drivers/xf86-video-modesetting
 
 find symlinks with
 find -L /dir/to/start -samefile /tmp/orig.file
+
+https://github.com/gentoo/arm/search?utf8=%E2%9C%93&q=vc4
+
+I think swrastg_dri.so and vc4_dri.so are the same file but with different names
+which means in theory if we set messa to sofrware mode / gallium then it should be using vc4 for the driver
+maybe we need to change the other settings such as in the config.txt to get it to work as well
+
+the gallium driver is definitley faster than classic
+look into kms driver, also I don't think we're using VC4 yet based on the below
+
+https://www.youtube.com/watch?v=P-1EHdHxEk8
+
+
+
+
+x11-apps/xdriinfo
+
+Get Xorg errors
+grep -e '(EE)' -e '(WW)' /var/log/Xorg.0.log 
+
+use flag dri3 enabled
+
+
+I think /dev/dri/card0 is created when the xorg modules are loaded
+/usr/lib/xorg/modules
+the xorg config looks towards the modesetting driver
+/usr/lib/xorg/modules/drivers/modesetting_drv.so
+
+I think the drm driver isn't being loaded at boot, tried disabling all fb drivers next
+
+http://linux.koolsolutions.com/2009/11/02/howto-enabling-kernel-mode-setting-kms-in-debian-linux-kernel/
+https://www.raspberrypi.org/forums/viewtopic.php?f=63&t=102847&sid=73de77d545eba1710720606cc8c28926&start=25
+
+try running startx as root without xdm
+try attaching a monitor then rerun
+try updating xorg server to latest version
+
+Look at flask / python for the hack space auth
+check with bob, and then look at the point of sale system
+
+It looks like the missing thing is the following in cmdline.txt
+
+  dtoverlay=vc4-kms-v3d
+
+  * https://github.com/raspberrypi/linux/issues/1210
+  * https://github.com/raspberrypi/linux/issues/1182
+  * https://www.raspberrypi.org/blog/another-new-raspbian-release/
+
+
+not sure about this
+coherent_pool=6M smsc95xx.turbo_mode=N
+CONFIG_CMA_SIZE_MBYTES=256
+
+
+cp *.dtb /boot/
+cp overlays/*.dtb /boot/overlays/
+
+CONFIG_CMA_SIZE_MBYTES=256
+CONFIG_FB_BCM2708
+
+it looks like linux-4.5-rc6-grbd works partially
+but linux-4.5-rc6-grbd-r1 with the same settings doesn't boot at all
+
+linux-4.5-rc6-grbd-r2 will be the old kernel but something we can play with
+
+git clone https://github.com/raspberrypi/linux.git test1
+git checkout -b rpi-4.5.y origin/rpi-4.5.y
+
+for some reason
+e481b5ceae6c94c7e60f8bb8591cbb362806246e shows as 2b2c4343707cf3117844b012a20bc4817a09b192
+within git log
+
+# list recent commits
+git log
+
+#Starting point (okay):
+git checkout b47868e0b58e112a1bebee16e35144673e09643b
+
+# To jump back to latest point for 4.5
+git checkout rpi-4.5.y
+
+Main Failure point: 8924ecf62e9ee8ec991d6361152e17268cc7ed6f
+
+
+
+trying kernel sources instead of:
+https://github.com/anholt/linux/tree/drm-vc4-dt
+branch: drm-vc4-dt
+version: 4.5.0-rc5
+commit: b0c92f13203f10c341de52bb4ec94eeb7cea9ed6
+
+git clone https://github.com/anholt/linux.git linux-4.5-rc5-anholt-vc4
+git checkout -b drm-vc4-dt origin/drm-vc4-dt
+
+trying drm-vc4-next next
+also look at drm-vc4-4.5

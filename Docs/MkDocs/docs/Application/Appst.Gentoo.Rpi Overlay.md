@@ -38,14 +38,14 @@ To install
 emerge --autounmask-write =dev-python/RPi-GPIO-0.6.2
 ```
 
-## rpi3-firmware
+## rpi3-wifi-firmware
 
 This is ebuild which installs the needed firmware files to allow the inbuilt wireless driver
 to work for the Rpi3
 
 To install
 ```sh
-emerge rpi3-firmware
+emerge rpi3-wifi-firmware
 ```
 
 ## grbd-rpi-sources
